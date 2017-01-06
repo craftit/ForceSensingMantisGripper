@@ -1,4 +1,4 @@
-# Force Sensingi Manitsi Gripper
+# Force Sensingi Mantis Gripper
 Force sensing for the mantis gripper, with ROS integration and adaptor for the UR5
 
 ## The Mantis Gripper
