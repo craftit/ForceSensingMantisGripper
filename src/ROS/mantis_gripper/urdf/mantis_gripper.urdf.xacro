@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="mantis_gripper" params="prefix">
+  
+ <link name="${prefix}gripper_base_link">
+   <inertial>
+     <origin xyz="0 0 0" rpy="0 0 0"/>
+     <mass value="0.1"/>
+     <inertia ixx="0.0001"  ixy="0"  ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+   </inertial>
+   <visual>
+     <geometry>
+       <mesh filename="package://mantis_gripper/meshes/visual/GripperBase.stl" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="LightGrey">
+       <color rgba="0.7 0.7 0.7 1.0"/>
+     </material>
+   </visual>
+   <collision>
+    <geometry>
+      <mesh filename="package://mantis_gripper/meshes/collision/GripperBase.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+   </collision> 
+ </link>
+
+ <link name="${prefix}claw_r">
+   <inertial>
+     <origin xyz="0 0 0.0" rpy="0 0 0"/>
+     <mass value="0.1"/>
+     <inertia ixx="0.0001"  ixy="0"  ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+   </inertial>
+   <visual>
+     <origin xyz="0 0 0.0" rpy="0 0 0"/>
+     <geometry>
+       <mesh filename="package://mantis_gripper/meshes/visual/Claw_3_r.stl" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="LightGrey">
+       <color rgba="0.7 0.7 0.7 1.0"/>
+     </material>
+   </visual>
+   <collision>
+    <geometry>
+      <mesh filename="package://mantis_gripper/meshes/collision/Claw_3_r.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+   </collision> 
+ </link>
+
+ <link name="${prefix}claw_l">
+   <inertial>
+     <origin xyz="0 0 0.0" rpy="0 0 0"/>
+     <mass value="0.1"/>
+     <inertia ixx="0.0001"  ixy="0"  ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+   </inertial>
+   <visual>
+     <origin xyz="0 0 0.0" rpy="0 0 0"/>
+     <geometry>
+       <mesh filename="package://mantis_gripper/meshes/visual/Claw_3_l.stl" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="LightGrey">
+       <color rgba="0.7 0.7 0.7 1.0"/>
+     </material>
+   </visual>
+   <collision>
+    <geometry>
+      <mesh filename="package://mantis_gripper/meshes/collision/Claw_3_l.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+   </collision> 
+ </link>
+ 
+ 
+ <joint name="${prefix}claw_l_joint" type="revolute">
+   <origin xyz="0 0 0.096" rpy="0 0 0"/>
+   <parent link="${prefix}gripper_base_link"/>
+   <child link="${prefix}claw_l"/>
+   <axis xyz="0 1 0" />
+   <limit lower="0" upper="0.785398163397" effort="30" velocity="1.0" />      
+ </joint>
+
+ <joint name="${prefix}claw_r_joint" type="revolute">
+   <origin xyz="0 0 0.096" rpy="0 0 0"/>
+   <parent link="${prefix}gripper_base_link"/>
+   <axis xyz="0 1 0" />
+   <child link="${prefix}claw_r"/>
+   <limit lower="-0.785398163397" upper="0" effort="30" velocity="1.0" />      
+   <mimic joint="${prefix}claw_l_joint" multiplier="-1.0" offset="0" />
+ </joint>
+
+</xacro:macro> 
+</robot>

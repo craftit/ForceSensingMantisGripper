@@ -1,0 +1,7 @@
+<launch>
+  <arg name="model" />
+  <arg name="gui" default="False" />
+  <param name="robot_description" textfile="$(find mantis_gripper)/urdf/mantis_gripper.urdf.xacro" />
+  <param name="use_gui" value="$(arg gui)"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mantis_gripper)/urdf.rviz" />
+</launch>
