@@ -16,12 +16,12 @@ this project is distributed under the MIT License.
 ## Files
 
 
-CAD - 3D files for the parts, created with Freecad 0.16
-Electronics - Description of the electronics used for the controller.
-src - source code for the project
-  Firmware - Code to be run on the Arduino.
-  ROS - ROS node to talk to the gripper.
-media - Pictures of the build.
+- CAD - 3D files for the parts, created with Freecad 0.16
+- Electronics - Description of the electronics used for the controller.
+- src - source code for the project
+--   Firmware - Code to be run on the Arduino.
+--   ROS - ROS node to talk to the gripper.
+- media - Pictures of the build.
 
 
   
