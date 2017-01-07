@@ -3,7 +3,8 @@ Force sensing for the mantis gripper, with ROS integration and adaptor for the U
 
 ## The Mantis Gripper
 
-This project takes the gripper for Andreas Hölldorfer's gripper for his Mantis robot arm and adds force sensing and ROS integration.
+This project takes the gripper for Andreas Hölldorfer's gripper for his Mantis robot arm and adds force sensing and ROS integration. It also contains a URDF model, collision meshes, and visual meshes for integration with ROS MoveIt! 
+
 The information on the gripper can be found at: http://chaozlabs.blogspot.co.uk/2016/04/mantis-robot-arm-part-1-gripper.html
 
 The parts for the gripper can be downloaded from thingiverse: https://www.thingiverse.com/thing:1480408
