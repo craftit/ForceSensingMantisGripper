@@ -8,6 +8,11 @@ The information on the gripper can be found at: http://chaozlabs.blogspot.co.uk/
 
 The parts for the gripper can be downloaded from thingiverse: https://www.thingiverse.com/thing:1480408
 
+## Outstanding issues
+
+- The servo motor can still overhead if left gripping an object too long. This is particularly a problem if you print the gripper parts in PLA
+- Ideally it would put on a custom PCB or use an existing smart servo controller.
+
 ## License
 
 Except for files based on the Mantis Gripper which are creative commonds, 
