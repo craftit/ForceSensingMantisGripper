@@ -16,7 +16,7 @@ The parts for the gripper can be downloaded from thingiverse: https://www.thingi
 
 ## License
 
-Except for files based on the Mantis Gripper which are creative commonds, 
+Except for files based on the Mantis Gripper which are creative commons, 
 this project is distributed under the MIT License.
 
 ## Files
